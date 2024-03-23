@@ -1,8 +1,14 @@
 # ICP Internship Bootcamp Projects
 
-Welcome to our repository :) You can find the projects we created at ICP Internship Bootcamp. 
+Welcome to our repository :) You can find the projects we created with our menthor Barbaros Alagöz during ICP Internship Bootcamp. 
 
-You can find usefull info down for the prohects. 
+These projects are the examples of some motoko projects.
+
+Some projects have both frontend and backend some projects have only backend.
+
+I will try to add frontend to all projects. As soon as I added frontend I will updarte this readme file You can ckeck whenever you want. 
+
+You can find usefull info down for the projects. 
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
 
 To learn more before you start working with first_icp_project, see the following documentation available online:
@@ -15,7 +21,7 @@ To learn more before you start working with first_icp_project, see the following
 If you want to start working on your project right away, you might want to try the following commands:
 
 ```bash
-cd first_icp_project/
+cd [project_name] // forexample: cd superhero
 dfx help
 dfx canister --help
 ```
@@ -26,7 +32,7 @@ If you want to test your project locally, you can use the following commands:
 
 ```bash
 # Starts the replica, running in the background
-dfx start --background
+dfx start --celan 
 
 # Deploys your canisters to the replica and generates your candid interface
 dfx deploy
