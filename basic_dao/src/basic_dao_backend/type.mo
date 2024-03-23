@@ -25,17 +25,11 @@ module {
     message : Blob;
   };
   public type ProposalState = {
-      // A failure occurred while executing the proposal
       #failed : Text;
-      // The proposal is open for voting
       #open;
-      // The proposal is currently being executed
       #executing;
-      // Enough "no" votes have been cast to reject the proposal, and it will not be executed
       #rejected;
-      // The proposal has been successfully executed
       #succeeded;
-      // Enough "yes" votes have been cast to accept the proposal, and it will soon be executed
       #accepted;
   };
   public type Tokens = { amount_e8s : Nat };
@@ -50,13 +44,7 @@ module {
 
   public type SystemParams = {
     transfer_fee: Tokens;
-
-    // The amount of tokens needed to vote "yes" to accept, or "no" to reject, a proposal
     proposal_vote_threshold: Tokens;
-
-    // The amount of tokens that will be temporarily deducted from the account of
-    // a user that submits a proposal. If the proposal is Accepted, this deposit is returned,
-    // otherwise it is lost. This prevents users from submitting superfluous proposals.
     proposal_submission_deposit: Tokens;
   };
   public type BasicDaoStableStorage = {
@@ -79,7 +67,7 @@ module {
       for (proposal in arr.vals()) {
           s := Trie.put(s, proposal_key(proposal.id), Nat.equal, proposal).0;
       };
-      s
+      s // return
   };
   
   public let oneToken = { amount_e8s = 10_000_000 };
